@@ -37,10 +37,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
   @override
   Future<List<MovieModel>> getPopularMovies() async {
-    // HttpClient client = HttpClient(context: await globalContext);
-    // client.badCertificateCallback =
-    //     (X509Certificate cert, String host, int port) => false;
-    // IOClient ioClient = IOClient(client);
     final response =
         await ioClient.get(Uri.parse('$_BASE_URL/movie/popular?$_API_KEY'));
 
@@ -53,10 +49,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
   @override
   Future<List<MovieModel>> getTopRatedMovies() async {
-    // HttpClient client = HttpClient(context: await globalContext);
-    // client.badCertificateCallback =
-    //     (X509Certificate cert, String host, int port) => false;
-    // IOClient ioClient = IOClient(client);
     final response =
         await ioClient.get(Uri.parse('$_BASE_URL/movie/top_rated?$_API_KEY'));
 
@@ -69,10 +61,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
   @override
   Future<MovieDetailModel> getMovieDetail(int id) async {
-    // HttpClient client = HttpClient(context: await globalContext);
-    // client.badCertificateCallback =
-    //     (X509Certificate cert, String host, int port) => false;
-    // IOClient ioClient = IOClient(client);
     final response =
         await ioClient.get(Uri.parse('$_BASE_URL/movie/$id?$_API_KEY'));
 
@@ -85,10 +73,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
   @override
   Future<List<MovieModel>> getMovieRecommendations(int id) async {
-    // HttpClient client = HttpClient(context: await globalContext);
-    // client.badCertificateCallback =
-    //     (X509Certificate cert, String host, int port) => false;
-    // IOClient ioClient = IOClient(client);
     final response = await ioClient
         .get(Uri.parse('$_BASE_URL/movie/$id/recommendations?$_API_KEY'));
 
@@ -101,10 +85,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
   @override
   Future<List<MovieModel>> searchMovies(String query) async {
-    // HttpClient client = HttpClient(context: await globalContext);
-    // client.badCertificateCallback =
-    //     (X509Certificate cert, String host, int port) => false;
-    // IOClient ioClient = IOClient(client);
     final response = await ioClient
         .get(Uri.parse('$_BASE_URL/search/movie?$_API_KEY&query=$query'));
 
